@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - GamerZone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/login.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+            <div class="logo">
+                🎮 GamerZone
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-primary">Iniciar Sesión</a>
+                <a href="registro.html" style="text-decoration: none; color: var(--text-primary);">Registro</a>
+            </div>
+        </div>
+        <p class="hint">Inicia sesión para acceder a tu cuenta</p>
+    </header>
+
+    <main>
+        <!-- Formulario de Login -->
+        <section>
+            <div class="hero-section">
+                <h1>Iniciar Sesión</h1>
+                <p>Ingresa a tu cuenta de GamerZone</p>
+            </div>
+            
+            <div style="max-width: 400px; margin: 0 auto;">
+                <form id="formLogin">
+                    <div class="row">
+                        <div>
+                            <label for="emailLogin">Correo Electrónico:</label>
+                            <input 
+                                type="email" 
+                                id="emailLogin" 
+                                placeholder="tu@duoc.cl"
+                                required
+                            >
+                            <small class="hint">Solo se permiten dominios: @duoc.cl, @profesor.duoc.cl, @gmail.com</small>
+                        </div>
+                        <div>
+                            <label for="passwordLogin">Contraseña:</label>
+                            <input 
+                                type="password" 
+                                id="passwordLogin" 
+                                placeholder="Ingresa tu contraseña"
+                                required
+                            >
+                            <small class="hint">Entre 4 y 10 caracteres</small>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button type="submit" class="btn-primary" id="btnIniciarSesion">
+                            🔐 Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Mensajes de validación -->
+                <div id="mensajesLogin" style="margin-top: 1rem; text-align: center;">
+                    <!-- Los mensajes aparecerán aquí -->
+                </div>
+                
+                <!-- Link a registro -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p>¿No tienes cuenta?</p>
+                    <a href="registro.html" class="btn-cart">Crear Cuenta Nueva</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información adicional -->
+        <section>
+            <h2>ℹ️ Información de Acceso</h2>
+            <div class="row">
+                <div>
+                    <h3>Usuarios de Prueba</h3>
+                    <p><strong>Administrador:</strong></p>
+                    <p class="pill">admin@duoc.cl / admin123</p>
+                    
+                    <p><strong>Cliente:</strong></p>
+                    <p class="pill">cliente@duoc.cl / cliente123</p>
+                </div>
+                <div>
+                    <h3>Dominios Permitidos</h3>
+                    <ul style="color: var(--text-secondary);">
+                        <li>@duoc.cl (estudiantes)</li>
+                        <li>@profesor.duoc.cl (profesores)</li>
+                        <li>@gmail.com (general)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estado de LocalStorage -->
+        <section>
+            <h2>🔧 Estado del Sistema</h2>
+            <div class="row">
+                <div>
+                    <p>Usuarios registrados: <strong id="usuariosRegistrados">0</strong></p>
+                    <p>Última sesión: <strong id="ultimaSesion">Ninguna</strong></p>
+                </div>
+                <div>
+                    <button id="btnLimpiarDatos">Limpiar Datos de Prueba</button>
+                    <button id="btnCargarDatosPrueba" class="btn-primary">Cargar Usuarios de Prueba</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center;">
+            <small>&copy; 2025 GamerZone - Sistema de Autenticación</small>
+            <div style="margin-top: 0.5rem;">
+                <span class="pill">Validación Email</span>
+                <span class="pill">LocalStorage</span>
+                <span class="pill">Sesión Segura</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

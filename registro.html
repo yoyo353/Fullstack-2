@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - GamerZone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/registro.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+            <div class="logo">
+                🎮 GamerZone
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" style="text-decoration: none; color: var(--text-primary);">Iniciar Sesión</a>
+                <a href="registro.html" class="btn-primary">Registro</a>
+            </div>
+        </div>
+        <p class="hint">Crea tu cuenta para acceder a todas las funcionalidades</p>
+    </header>
+
+    <main>
+        <!-- Formulario de Registro -->
+        <section>
+            <div class="hero-section">
+                <h1>Crear Cuenta Nueva</h1>
+                <p>Únete a la comunidad GamerZone</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form id="formRegistro">
+                    <!-- Datos Personales -->
+                    <h2>📋 Datos Personales</h2>
+                    <div class="row">
+                        <div>
+                            <label for="runRegistro">RUN (sin puntos ni guión):</label>
+                            <input 
+                                type="text" 
+                                id="runRegistro" 
+                                placeholder="12345678K"
+                                maxlength="9"
+                                required
+                            >
+                            <small class="hint">Ejemplo: 12345678K (7-9 caracteres)</small>
+                        </div>
+                        <div>
+                            <label for="nombreRegistro">Nombre:</label>
+                            <input 
+                                type="text" 
+                                id="nombreRegistro" 
+                                placeholder="Juan"
+                                maxlength="50"
+                                required
+                            >
+                            <small class="hint">Máximo 50 caracteres</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div>
+                            <label for="apellidosRegistro">Apellidos:</label>
+                            <input 
+                                type="text" 
+                                id="apellidosRegistro" 
+                                placeholder="Pérez González"
+                                maxlength="100"
+                                required
+                            >
+                            <small class="hint">Máximo 100 caracteres</small>
+                        </div>
+                        <div>
+                            <label for="fechaNacimiento">Fecha de Nacimiento (opcional):</label>
+                            <input 
+                                type="date" 
+                                id="fechaNacimiento"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Datos de Contacto -->
+                    <h2>📧 Datos de Contacto</h2>
+                    <div class="row">
+                        <div>
+                            <label for="emailRegistro">Correo Electrónico:</label>
+                            <input 
+                                type="email" 
+                                id="emailRegistro" 
+                                placeholder="tu@duoc.cl"
+                                maxlength="100"
+                                required
+                            >
+                            <small class="hint">Solo @duoc.cl, @profesor.duoc.cl, @gmail.com</small>
+                        </div>
+                        <div>
+                            <label for="tipoUsuario">Tipo de Usuario:</label>
+                            <select id="tipoUsuario" required>
+                                <option value="">Seleccionar tipo</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Vendedor">Vendedor</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Ubicación -->
+                    <h2>🌎 Ubicación</h2>
+                    <div class="row">
+                        <div>
+                            <label for="regionSelect">Región:</label>
+                            <select id="regionSelect" required>
+                                <option value="">Seleccionar región</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="comunaSelect">Comuna:</label>
+                            <select id="comunaSelect" required>
+                                <option value="">Primero selecciona región</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div style="grid-column: 1 / -1;">
+                            <label for="direccion">Dirección:</label>
+                            <input 
+                                type="text" 
+                                id="direccion" 
+                                placeholder="Av. Providencia 123, Depto 45"
+                                maxlength="300"
+                                required
+                            >
+                            <small class="hint">Máximo 300 caracteres</small>
+                        </div>
+                    </div>
+
+                    <!-- Contraseñas -->
+                    <h2>🔐 Seguridad</h2>
+                    <div class="row">
+                        <div>
+                            <label for="passwordRegistro">Contraseña:</label>
+                            <input 
+                                type="password" 
+                                id="passwordRegistro" 
+                                placeholder="Entre 4-10 caracteres"
+                                maxlength="10"
+                                required
+                            >
+                            <small class="hint">Entre 4 y 10 caracteres</small>
+                        </div>
+                        <div>
+                            <label for="confirmarPassword">Confirmar Contraseña:</label>
+                            <input 
+                                type="password" 
+                                id="confirmarPassword" 
+                                placeholder="Repetir contraseña"
+                                maxlength="10"
+                                required
+                            >
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn-primary" id="btnRegistrarse">
+                            ✅ Crear Cuenta
+                        </button>
+                        <button type="button" id="btnLimpiarForm">
+                            🧹 Limpiar Formulario
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Mensajes de validación -->
+                <div id="mensajesRegistro" style="margin-top: 1rem;">
+                    <!-- Los mensajes aparecerán aquí -->
+                </div>
+                
+                <!-- Link a login -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p>¿Ya tienes cuenta?</p>
+                    <a href="login.html" class="btn-cart">Iniciar Sesión</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Validaciones -->
+        <section>
+            <h2>📋 Reglas de Validación</h2>
+            <div class="row">
+                <div>
+                    <h3>RUN Chileno</h3>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>Sin puntos ni guión</li>
+                        <li>Entre 7 y 9 caracteres</li>
+                        <li>Último carácter: número o K</li>
+                        <li>Ejemplo: 12345678K</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Email Permitido</h3>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>@duoc.cl (estudiantes)</li>
+                        <li>@profesor.duoc.cl (profesores)</li>
+                        <li>@gmail.com (general)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estado del Sistema -->
+        <section>
+            <h2>🔧 Validación en Tiempo Real</h2>
+            <div id="estadoValidacion">
+                <div class="row">
+                    <div>
+                        <p>RUN: <span id="estadoRUN" class="pill">Sin validar</span></p>
+                        <p>Email: <span id="estadoEmail" class="pill">Sin validar</span></p>
+                    </div>
+                    <div>
+                        <p>Contraseña: <span id="estadoPassword" class="pill">Sin validar</span></p>
+                        <p>Confirmación: <span id="estadoConfirm" class="pill">Sin validar</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center;">
+            <small>&copy; 2025 GamerZone - Registro de Usuarios</small>
+            <div style="margin-top: 0.5rem;">
+                <span class="pill">Validación RUN</span>
+                <span class="pill">Región/Comuna</span>
+                <span class="pill">Validación Email</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
