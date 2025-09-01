@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - GamerZone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/productos.js"></script>
+      
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+            <div class="logo">
+                🎮 GamerZone
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="productos.html" class="active">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="user-actions">
+                <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
+                <button onclick="window.location.href='registro.html'">Registro</button>
+                <button id="btnCarrito" class="btn-cart">
+                    🛒 Carrito <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+        <p class="hint">Explora nuestro catálogo completo de videojuegos</p>
+    </header>
+
+    <main>
+        <!-- Filtros y Búsqueda -->
+        <section>
+            <h2>🔍 Buscar y Filtrar</h2>
+            <div class="filters-section">
+                <div class="row">
+                    <div>
+                        <label for="buscarTexto">Buscar por nombre:</label>
+                        <input type="text" id="buscarTexto" placeholder="Ej: Zelda, FIFA, Call of Duty...">
+                    </div>
+                    <div>
+                        <label for="filtroCategoria">Filtrar por categoría:</label>
+                        <select id="filtroCategoria">
+                            <option value="">Todas las categorías</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="ordenarPor">Ordenar por:</label>
+                        <select id="ordenarPor">
+                            <option value="nombre">Nombre A-Z</option>
+                            <option value="precio-menor">Precio: Menor a Mayor</option>
+                            <option value="precio-mayor">Precio: Mayor a Menor</option>
+                            <option value="stock">Stock Disponible</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="btnAplicarFiltros" class="btn-primary">Aplicar Filtros</button>
+                        <button id="btnLimpiarFiltros">Limpiar Todo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumen de Productos -->
+        <section>
+            <h2>📦 Catálogo de Productos</h2>
+            <p>Total de productos: <strong id="totalProductos">0</strong></p>
+            <p>Productos mostrados: <strong id="productosMostrados">0</strong></p>
+        </section>
+
+        <!-- Grid de Productos -->
+        <section>
+            <div class="products-grid" id="productosGrid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+            <div id="noProductos" class="no-products" style="display: none;">
+                <p>No se encontraron productos que coincidan con tu búsqueda.</p>
+                <button id="btnMostrarTodos" class="btn-primary">Mostrar Todos los Productos</button>
+            </div>
+        </section>
+
+        <!-- Información del Carrito -->
+        <section>
+            <h2>🛒 Estado del Carrito</h2>
+            <div class="row">
+                <div>
+                    <p>Productos en carrito: <strong id="productosEnCarrito">0</strong></p>
+                    <p>Total estimado: <strong id="totalCarrito">$0</strong></p>
+                </div>
+                <div>
+                    <button id="btnVerCarrito" class="btn-primary">Ver Carrito Completo</button>
+                    <button id="btnLimpiarCarrito">Limpiar Carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center;">
+            <small>&copy; 2025 GamerZone - Catálogo completo de videojuegos</small>
+            <div style="margin-top: 0.5rem;">
+                <span class="pill">Filtros Avanzados</span>
+                <span class="pill">Búsqueda Rápida</span>
+                <span class="pill">LocalStorage</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
