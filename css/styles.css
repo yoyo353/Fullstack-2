@@ -190,6 +190,218 @@ section {
     border-color: var(--color-brand);
 }
 
+/* ============================================================================
+   ESTILOS STEAM PARA PRODUCTOS
+   ============================================================================ */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.product-card.steam-style {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card.steam-style:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.15);
+    border-color: var(--color-brand);
+}
+
+.game-image-container {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.game-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.badges-container {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    align-items: flex-end;
+}
+
+.badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-sm);
+}
+
+.badge.descuento {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.badge.nuevo {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.badge.gratis {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.badge.stock-bajo {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.badge.sin-stock {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.game-info {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.game-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.categoria {
+    background: var(--bg-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+}
+
+.stock {
+    font-size: 0.8rem;
+}
+
+.precio-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+}
+
+.precio-original {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.precio-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-brand);
+}
+
+.precio-actual.gratis {
+    color: var(--color-success);
+    font-size: 1rem;
+}
+
+.btn-steam-cart {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand-hover));
+    color: var(--bg-primary);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-steam-cart:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--color-brand-hover), #0e7490);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+}
+
+.btn-steam-cart:disabled {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive para tarjetas Steam */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .game-image-container {
+        height: 160px;
+    }
+    
+    .game-info {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Animación para badges */
+@keyframes badgeGlow {
+    0%, 100% { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+}
+
+.badge.descuento {
+    animation: badgeGlow 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   ESTILOS ORIGINALES (mantener compatibilidad)
+   ============================================================================ */
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.05);
+}
+
 .product-image {
     width: 100%;
     height: 180px;

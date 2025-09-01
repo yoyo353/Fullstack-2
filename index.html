@@ -39,6 +39,36 @@
             <button class="btn-primary" onclick="scrollToProducts()">Ver Productos Destacados</button>
         </section>
 
+         <!-- Filtro por Categoría -->
+        <section>
+            <h2>🔍 Buscar por Categoría</h2>
+            <div class="row">
+                <div>
+                    <label for="categoriaFiltro">Selecciona una categoría:</label>
+                    <select id="categoriaFiltro">
+                        <option value="">Todas las categorías</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="btnFiltrar">Filtrar Productos</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Productos Destacados -->
+        <section id="productos-destacados">
+            <h2>🎮 Productos Destacados</h2>
+            <div class="products-grid" id="productosGrid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn-primary" onclick="window.location.href='productos.html'">
+                    Ver Todos los Productos
+                </button>
+            </div>
+        </section>
+
         <!-- Estadísticas -->
         <section>
             <h2>Nuestros Números</h2>
@@ -58,35 +88,9 @@
             </div>
         </section>
 
-        <!-- Productos Destacados -->
-        <section id="productos-destacados">
-            <h2>🎮 Productos Destacados</h2>
-            <div class="products-grid" id="productosGrid">
-                <!-- Los productos se cargarán aquí con JavaScript -->
-            </div>
-            <div style="text-align: center; margin-top: 1rem;">
-                <button class="btn-primary" onclick="window.location.href='productos.html'">
-                    Ver Todos los Productos
-                </button>
-            </div>
-        </section>
+        
 
-        <!-- Filtro por Categoría -->
-        <section>
-            <h2>🔍 Buscar por Categoría</h2>
-            <div class="row">
-                <div>
-                    <label for="categoriaFiltro">Selecciona una categoría:</label>
-                    <select id="categoriaFiltro">
-                        <option value="">Todas las categorías</option>
-                    </select>
-                </div>
-                <div>
-                    <button id="btnFiltrar">Filtrar Productos</button>
-                </div>
-            </div>
-        </section>
-
+       
         <!-- Newsletter -->
         <section class="newsletter-section">
             <h2>📧 Únete a Nuestro Newsletter</h2>

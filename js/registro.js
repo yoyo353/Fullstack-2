@@ -280,7 +280,6 @@ function procesarRegistro() {
     const password = $('#passwordRegistro').value.trim();
     const confirmarPassword = $('#confirmarPassword').value.trim();
     const fechaNacimiento = $('#fechaNacimiento').value;
-    const tipoUsuario = $('#tipoUsuario').value;
     const region = $('#regionSelect').value;
     const comuna = $('#comunaSelect').value;
     const direccion = $('#direccion').value.trim();
@@ -330,7 +329,6 @@ function procesarRegistro() {
         email,
         password,
         fechaNacimiento: fechaNacimiento || null,
-        tipo: tipoUsuario,
         region,
         comuna,
         direccion
