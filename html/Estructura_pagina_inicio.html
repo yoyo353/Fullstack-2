@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clase 3 — JavaScript</title>
+  <script type="module" src="./app.js"></script>
+  <style>
+    /* Estilos mínimos solo para visualización*/
+    :root { color-scheme: dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#0f172a; color:#e5e7eb; line-height:1.6 }
+    header, footer { background:#111827; border-block: 1px solid #1f2937; padding: 1rem; }
+    main { padding: 1rem; max-width: 1100px; margin-inline: auto; }
+    section { background:#0b1220; border:1px solid #1f2937; border-radius:.8rem; padding:1rem; margin-bottom:1rem }
+    .row { display:grid; grid-template-columns: 1fr 1fr; gap: .75rem }
+    label { color:#93a3b8; font-size:.9rem }
+    input, button, select, textarea { background:#111827; color:#e5e7eb; border:1px solid #1f2937; border-radius:.5rem; padding:.5rem .75rem }
+    button { cursor:pointer }
+    pre { background:#111827; border:1px dashed #263248; border-radius:.5rem; padding:.75rem; overflow:auto; }
+    .pill { display:inline-block; padding:.2rem .5rem; border-radius:999px; background:#122036; margin-right:.4rem; border: 1px solid #24304a }
+    .hint { color:#9ca3af; font-size:.9rem }
+    ul#lista { margin: .5rem 0 0 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clase 3 — JavaScript (Módulos ES + Live Server)</h1>
+    <p class="hint">
+      Abre esta carpeta con VS Code y usa <strong>Open with Live Server</strong> para ejecutar.
+    </p>
+  </header>
+
+  <main>
+    <section id="s-variables">
+      <h2>Variables, tipos, selectores</h2>
+      <div class="row">
+        <div>
+          <label for="nombre">Nombre: </label>
+          <input type="text" id="nombre" placeholder="Ingrese un nombre">
+        </div>
+        <div>
+          <label for="edad">Edad: </label>
+          <input type="number" id="edad" min="0" placeholder="Ingrese una edad">
+        </div>
+      </div>
+      <p><button id="btnSaludar">Saludar</button></p>
+      <pre id="outSaludo"></pre>
+    </section>
+
+    <section id="s-dom">
+      <h2>DOM: crear, agregar y eliminar</h2>
+      <div class="row">
+        <div>
+          <label for="txtItem">Nuevo Item: </label>
+          <input type="text" id="txtItem" placeholder="Estudiar para FullStack 2">
+        </div>
+        <div>
+          <button id="btnAgregar">Agregar</button>
+        </div>
+      </div>
+      <ul id="lista"></ul>
+    </section>
+
+    <section id="s-eventos">
+      <h2>Eventos click</h2>
+      <div id="panel">
+        <button class="pill" data-action="info">Información</button>
+        <button class="pill" data-action="ok">OK</button>
+        <button class="pill" data-action="warn">Warning</button>
+        <button class="pill" data-action="error">Error</button>
+      </div>
+      <pre id="outEventos"></pre>
+    </section>
+  </main>
+
+  <footer><small>&copy; 2025 Curso Front End — JavaScript</small></footer>
+</body>
+</html>
