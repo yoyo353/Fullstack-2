@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GamerZone - Tu Tienda Gaming</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/app.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+            <div class="logo">
+                🎮 GamerZone
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="user-actions">
+                <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
+                <button onclick="window.location.href='registro.html'">Registro</button>
+                <button id="btnCarrito" class="btn-cart">
+                    🛒 Carrito <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+        <p class="hint">¡Los mejores videojuegos al mejor precio!</p>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero-section">
+            <h1>Bienvenido a GamerZone</h1>
+            <p>Tu tienda gaming de confianza. Encuentra los últimos lanzamientos y clásicos atemporales.</p>
+            <button class="btn-primary" onclick="scrollToProducts()">Ver Productos Destacados</button>
+        </section>
+
+        <!-- Estadísticas -->
+        <section>
+            <h2>Nuestros Números</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalProductos">12</div>
+                    <div>Productos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalCategorias">5</div>
+                    <div>Categorías</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="clientesFelices">500+</div>
+                    <div>Clientes Felices</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Destacados -->
+        <section id="productos-destacados">
+            <h2>🎮 Productos Destacados</h2>
+            <div class="products-grid" id="productosGrid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn-primary" onclick="window.location.href='productos.html'">
+                    Ver Todos los Productos
+                </button>
+            </div>
+        </section>
+
+        <!-- Filtro por Categoría -->
+        <section>
+            <h2>🔍 Buscar por Categoría</h2>
+            <div class="row">
+                <div>
+                    <label for="categoriaFiltro">Selecciona una categoría:</label>
+                    <select id="categoriaFiltro">
+                        <option value="">Todas las categorías</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="btnFiltrar">Filtrar Productos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <h2>📧 Únete a Nuestro Newsletter</h2>
+            <p>Recibe ofertas exclusivas y noticias gaming</p>
+            <div class="newsletter-form">
+                <div class="row">
+                    <div>
+                        <input type="email" id="emailNewsletter" placeholder="tu@email.com">
+                    </div>
+                    <div>
+                        <button id="btnSuscribir" class="btn-primary">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+            <p id="mensajeNewsletter" class="hint"></p>
+        </section>
+
+        <!-- Información Adicional -->
+        <section>
+            <h2>ℹ️ Información del Sistema</h2>
+            <div class="row">
+                <div>
+                    <h3>Productos en LocalStorage</h3>
+                    <p>Productos guardados: <span id="productosEnStorage">0</span></p>
+                    <button id="btnCargarProductos">Cargar Productos</button>
+                </div>
+                <div>
+                    <h3>Estado del Carrito</h3>
+                    <p>Items en carrito: <span id="itemsEnCarrito">0</span></p>
+                    <button id="btnVerCarrito">Ver Carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center;">
+            <small>&copy; 2025 GamerZone - Tu tienda gaming de confianza</small>
+            <div style="margin-top: 0.5rem;">
+                <span class="pill">HTML5</span>
+                <span class="pill">CSS3</span>
+                <span class="pill">JavaScript</span>
+                <span class="pill">LocalStorage</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
