@@ -302,10 +302,6 @@ function procesarRegistro() {
     }
     
     // Verificar campos requeridos
-    if (!tipoUsuario) {
-        mostrarMensaje('Selecciona un tipo de usuario', 'error');
-        return;
-    }
     
     if (!region || !comuna) {
         mostrarMensaje('Selecciona región y comuna', 'error');

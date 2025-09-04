@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Administrador - GamerZone</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+            <div class="logo">🎮 GamerZone</div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="productos.html">Productos</a>
+                <a href="registro.html">Registro</a>
+            </nav>
+            <div class="user-actions">
+                <span id="usuarioLogueado" style="display:none;"></span>
+                <button id="btnCerrarSesion" style="display:none; margin-left: 8px;">Cerrar Sesión</button>
+            </div>
+        </div>
+        <h1>Panel de Administración</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Gestión de Usuarios</h2>
+            <button id="btnLimpiarUsuarios" class="btn-danger">Limpiar registros de usuarios</button>
+            <div id="mensajeAdmin" style="margin-top:1rem;"></div>
+        </section>
+    </main>
+    <footer>
+        <div style="text-align: center;">
+            <small>&copy; 2025 GamerZone - Panel Administrador</small>
+        </div>
+    </footer>
+    <script>
+    // Mostrar usuario logueado y cerrar sesión
+    document.addEventListener('DOMContentLoaded', function() {
+        const usuario = localStorage.getItem('usuarioLogueado');
+        const usuarioLogueado = document.getElementById('usuarioLogueado');
+        const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+        if (usuario) {
+            if (usuarioLogueado) {
+                usuarioLogueado.style.display = 'inline-block';
+                usuarioLogueado.textContent = `👤 ${usuario}`;
+            }
+            if (btnCerrarSesion) btnCerrarSesion.style.display = 'inline-block';
+        } else {
+            if (btnCerrarSesion) btnCerrarSesion.style.display = 'none';
+        }
+        if (btnCerrarSesion) {
+            btnCerrarSesion.addEventListener('click', function() {
+                localStorage.removeItem('usuarioLogueado');
+                localStorage.removeItem('gamerzone_sesion');
+                window.location.href = 'login.html';
+            });
+        }
+        // Limpiar usuarios
+        document.getElementById('btnLimpiarUsuarios').addEventListener('click', function() {
+            if (confirm('¿Seguro que quieres eliminar todos los registros de usuarios?')) {
+                localStorage.removeItem('gamerzone_usuarios');
+                document.getElementById('mensajeAdmin').innerHTML = '<span style="color:green;">Registros eliminados correctamente</span>';
+            }
+        });
+    });
+    </script>
+</body>
+</html>

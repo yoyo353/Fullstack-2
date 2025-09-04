@@ -132,6 +132,8 @@ function procesarLogin(email, password) {
     
     // Login exitoso
     guardarSesion(usuario);
+    // Guardar nombre del usuario para mostrar en la UI principal
+    localStorage.setItem('usuarioLogueado', usuario.nombre);
     return { 
         exito: true, 
         mensaje: `¡Bienvenido, ${usuario.nombre}!`,

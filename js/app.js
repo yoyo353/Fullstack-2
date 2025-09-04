@@ -453,22 +453,45 @@ $('#productosGrid')?.addEventListener('click', (event) => {
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar usuario logueado si existe
+    const usuario = localStorage.getItem('usuarioLogueado');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnRegistro = document.getElementById('btnRegistro');
+    const usuarioLogueado = document.getElementById('usuarioLogueado');
+    const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+    if (usuario) {
+        if (btnLogin) btnLogin.style.display = 'none';
+        if (btnRegistro) btnRegistro.style.display = 'none';
+        if (usuarioLogueado) {
+            usuarioLogueado.style.display = 'inline-block';
+            usuarioLogueado.textContent = `👤 ${usuario}`;
+        }
+        if (btnCerrarSesion) btnCerrarSesion.style.display = 'inline-block';
+    } else {
+        if (btnCerrarSesion) btnCerrarSesion.style.display = 'none';
+    }
+
+    // Evento para cerrar sesión
+    if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener('click', () => {
+            localStorage.removeItem('usuarioLogueado');
+            localStorage.removeItem('gamerzone_sesion');
+            window.location.reload();
+        });
+    }
+
     console.log('🛍️ Página de productos cargada!');
-    
     // Cargar datos
     guardarProductos();
     productosOriginales = cargarProductos();
     productosFiltrados = [...productosOriginales];
-    
     // Configurar página
     cargarCategorias();
     mostrarTodosLosProductos();
     actualizarContadorCarrito();
     actualizarInfoCarrito();
-    
     // Actualizar contador total
     $('#totalProductos').textContent = productosOriginales.length;
-    
     console.log('✅ Página de productos inicializada correctamente');
 });
 
