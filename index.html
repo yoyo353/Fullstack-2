@@ -17,12 +17,13 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="productos.html">Productos</a>
                 <a href="nosotros.html">Nosotros</a>
-                <a href="blogs.html">Blogs</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
             <div class="user-actions">
-                <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
-                <button onclick="window.location.href='registro.html'">Registro</button>
+                <button onclick="window.location.href='login.html'" id="btnLogin">Iniciar Sesión</button>
+                <button onclick="window.location.href='registro.html'" id="btnRegistro">Registro</button>
+                <span id="usuarioLogueado" style="display:none;"></span>
+                <button id="btnCerrarSesion" style="display:none; margin-left: 8px;">Cerrar Sesión</button>
                 <button id="btnCarrito" class="btn-cart">
                     🛒 Carrito <span id="cartCount" class="cart-count">0</span>
                 </button>
@@ -39,39 +40,7 @@
             <button class="btn-primary" onclick="scrollToProducts()">Ver Productos Destacados</button>
         </section>
 
-        <!-- Estadísticas -->
-        <section>
-            <h2>Nuestros Números</h2>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="totalProductos">12</div>
-                    <div>Productos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="totalCategorias">5</div>
-                    <div>Categorías</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="clientesFelices">500+</div>
-                    <div>Clientes Felices</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Productos Destacados -->
-        <section id="productos-destacados">
-            <h2>🎮 Productos Destacados</h2>
-            <div class="products-grid" id="productosGrid">
-                <!-- Los productos se cargarán aquí con JavaScript -->
-            </div>
-            <div style="text-align: center; margin-top: 1rem;">
-                <button class="btn-primary" onclick="window.location.href='productos.html'">
-                    Ver Todos los Productos
-                </button>
-            </div>
-        </section>
-
-        <!-- Filtro por Categoría -->
+         <!-- Filtro por Categoría -->
         <section>
             <h2>🔍 Buscar por Categoría</h2>
             <div class="row">
@@ -87,6 +56,54 @@
             </div>
         </section>
 
+
+        <!-- Productos Destacados -->
+        <section id="productos-destacados">
+            <h2>🎮 Productos Destacados</h2>
+            <div class="products-grid" id="productosGrid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+            <div class="featured-images" style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;">
+                <a href="https://www.nintendo.com/es_LA/store/products/the-legend-of-zelda-breath-of-the-wild-switch/" target="_blank">
+                    <img src="img/zelda.jpg" alt="Zelda Breath of the Wild" style="width: 180px; border-radius: 8px; box-shadow: 0 2px 8px #0002; cursor: pointer;">
+                </a>
+                <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/" target="_blank">
+                    <img src="img/cyberpunk.jpg" alt="Cyberpunk 2077" style="width: 180px; border-radius: 8px; box-shadow: 0 2px 8px #0002; cursor: pointer;">
+                </a>
+                <a href="https://www.playstation.com/es-cl/games/god-of-war-ragnarok/" target="_blank">
+                    <img src="img/gow.jpg" alt="God of War Ragnarok" style="width: 180px; border-radius: 8px; box-shadow: 0 2px 8px #0002; cursor: pointer;">
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn-primary" onclick="window.location.href='productos.html'">
+                    Ver todos los productos
+                </button>
+            </div>
+        </section>
+
+        <!-- Estadísticas -->
+        <!--
+        <section>
+            <h2>Nuestros Números</h2>
+            <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalProductos">12</div>
+                <div>Productos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalCategorias">5</div>
+                <div>Categorías</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="clientesFelices">500+</div>
+                <div>Clientes Felices</div>
+            </div>
+            </div>
+        </section>
+        -->
+        
+
+       
         <!-- Newsletter -->
         <section class="newsletter-section">
             <h2>📧 Únete a Nuestro Newsletter</h2>
