@@ -1,4 +1,25 @@
 // ============================================================================
+// ========== VALIDACIÓN VISUAL POR CAMPO ==========
+function mostrarErrorCampo(idInput, mensaje) {
+    const input = document.getElementById(idInput);
+    if (!input) return;
+    input.classList.add('input-error');
+    let msg = input.parentElement.querySelector('.msg-error');
+    if (!msg) {
+        msg = document.createElement('div');
+        msg.className = 'msg-error';
+        input.parentElement.appendChild(msg);
+    }
+    msg.innerHTML = `<span>❌</span> ${mensaje}`;
+}
+
+function limpiarErrorCampo(idInput) {
+    const input = document.getElementById(idInput);
+    if (!input) return;
+    input.classList.remove('input-error');
+    let msg = input.parentElement.querySelector('.msg-error');
+    if (msg) msg.remove();
+}
 // GAMERZONE - REGISTRO.JS
 // JavaScript para la página de registro con validaciones completas
 // ============================================================================
@@ -387,24 +408,48 @@ $('#regionSelect')?.addEventListener('change', (event) => {
 // Validación en tiempo real
 $('#runRegistro')?.addEventListener('input', (event) => {
     const resultado = validarRUN(event.target.value);
-    actualizarEstadoValidacion('RUN', resultado);
+    if (!resultado.valido) {
+        mostrarErrorCampo('runRegistro', resultado.mensaje);
+    } else {
+        limpiarErrorCampo('runRegistro');
+    }
+});
+
+$('#nombreRegistro')?.addEventListener('input', (event) => {
+    const resultado = validarNombre(event.target.value, 'Nombre');
+    if (!resultado.valido) {
+        mostrarErrorCampo('nombreRegistro', resultado.mensaje);
+    } else {
+        limpiarErrorCampo('nombreRegistro');
+    }
 });
 
 $('#emailRegistro')?.addEventListener('input', (event) => {
     const resultado = validarEmail(event.target.value);
-    actualizarEstadoValidacion('Email', resultado);
+    if (!resultado.valido) {
+        mostrarErrorCampo('emailRegistro', resultado.mensaje);
+    } else {
+        limpiarErrorCampo('emailRegistro');
+    }
 });
 
 $('#passwordRegistro')?.addEventListener('input', (event) => {
     const resultado = validarPassword(event.target.value);
-    actualizarEstadoValidacion('Password', resultado);
+    if (!resultado.valido) {
+        mostrarErrorCampo('passwordRegistro', resultado.mensaje);
+    } else {
+        limpiarErrorCampo('passwordRegistro');
+    }
 });
 
 $('#confirmarPassword')?.addEventListener('input', (event) => {
     const password = $('#passwordRegistro').value;
     const confirmPassword = event.target.value;
-    const coincide = password === confirmPassword && password !== '';
-    actualizarEstadoValidacion('Confirm', { valido: coincide });
+    if (password !== confirmPassword) {
+        mostrarErrorCampo('confirmarPassword', 'Las contraseñas no coinciden');
+    } else {
+        limpiarErrorCampo('confirmarPassword');
+    }
 });
 
 // ============================================================================

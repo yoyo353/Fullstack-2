@@ -1,3 +1,20 @@
+/* === Validación visual de errores en inputs === */
+.input-error {
+    border: 2px solid #ff4d6d !important;
+    background: #232b39 !important;
+    color: #fff !important;
+}
+.msg-error {
+    color: #ff4d6d;
+    background: #232b39;
+    border-radius: 8px;
+    padding: 0.3em 0.8em;
+    margin-top: 0.2em;
+    font-size: 0.98em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
 /* ============================================================================
    GAMERZONE - STYLES.CSS
    Hoja de estilos externa para toda la aplicación

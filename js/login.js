@@ -61,8 +61,47 @@ function validarPassword(password) {
 
 // Obtener usuarios registrados desde localStorage
 function obtenerUsuarios() {
-    const usuarios = localStorage.getItem('gamerzone_usuarios');
-    return usuarios ? JSON.parse(usuarios) : [];
+    const usuariosPrueba = [
+        {
+            id: 1,
+            run: '12345678K',
+            nombre: 'Admin',
+            apellidos: 'Sistema',
+            email: 'admin@duoc.cl',
+            password: 'admin123',
+            tipo: 'Administrador',
+            fechaRegistro: '2023-01-01T00:00:00.000Z'
+        },
+        {
+            id: 2,
+            run: '87654321J',
+            nombre: 'Cliente',
+            apellidos: 'Prueba',
+            email: 'cliente@duoc.cl',
+            password: 'cliente123',
+            tipo: 'Cliente',
+            fechaRegistro: '2023-01-01T00:00:00.000Z'
+        },
+        {
+            id: 3,
+            run: '11111111K',
+            nombre: 'Vendedor',
+            apellidos: 'Prueba',
+            email: 'vendedor@duoc.cl',
+            password: 'vendedor123',
+            tipo: 'Vendedor',
+            fechaRegistro: '2023-01-01T00:00:00.000Z'
+        }
+    ];
+    const usuariosLS = localStorage.getItem('gamerzone_usuarios');
+    let usuarios = usuariosLS ? JSON.parse(usuariosLS) : [];
+    // Asegurar que los usuarios de prueba siempre estén presentes
+    usuariosPrueba.forEach(prueba => {
+        if (!usuarios.some(u => u.email === prueba.email)) {
+            usuarios.push(prueba);
+        }
+    });
+    return usuarios;
 }
 
 // Guardar usuario en localStorage
