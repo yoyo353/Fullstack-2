@@ -1,3 +1,27 @@
+// ================= VALIDACIONES GENERALES =================
+function validarPassword(password) {
+    if (!password || password.trim() === '') {
+        return { valido: false, mensaje: 'La contraseña es requerida' };
+    }
+    if (password.length < 4) {
+        return { valido: false, mensaje: 'Mínimo 4 caracteres' };
+    }
+    if (password.length > 10) {
+        return { valido: false, mensaje: 'Máximo 10 caracteres' };
+    }
+    return { valido: true, mensaje: 'Contraseña válida' };
+}
+
+function validarNombre(nombre, campo = 'Nombre') {
+    if (!nombre || nombre.trim() === '') {
+        return { valido: false, mensaje: `${campo} es requerido` };
+    }
+    const maxLength = campo === 'Nombre' ? 50 : 100;
+    if (nombre.length > maxLength) {
+        return { valido: false, mensaje: `${campo} no puede exceder ${maxLength} caracteres` };
+    }
+    return { valido: true, mensaje: `${campo} válido` };
+}
 // ============================================================================
 // GAMERZONE - PRODUCTOS.JS
 // JavaScript para la página de productos

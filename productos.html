@@ -10,58 +10,60 @@
 </head>
 <body>
     <header>
-        <div class="nav-header">
-            <div class="logo">
-                🎮 GamerZone
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="productos.html" class="active">Productos</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="blogs.html">Blogs</a>
-                <a href="contacto.html">Contacto</a>
+        <div class="nav-header" style="background: #101624; border-radius: 0 0 18px 18px; padding-bottom: 1.2rem;">
+            <div class="logo" style="font-size: 2rem; color: #19e0ff; font-weight: bold;">🎮 GamerZone</div>
+            <nav class="nav-menu" style="display: flex; gap: 1.5rem; margin-top: 0.5rem;">
+                <a href="index.html" style="color: #ffb300; font-size: 1.1rem; display: flex; align-items: center;"><span style="font-size:1.3rem; margin-right:0.3rem;">🏠</span>Home</a>
+                <a href="productos.html" class="active" style="color: #19e0ff; font-size: 1.1rem; display: flex; align-items: center; background: #232b39; border-radius: 12px; padding: 0.2rem 1.2rem;"><span style="font-size:1.3rem; margin-right:0.3rem;">🎮</span>Productos</a>
+                <a href="nosotros.html" style="color: #b3c2d6; font-size: 1.1rem; display: flex; align-items: center;"><span style="font-size:1.3rem; margin-right:0.3rem;">👥</span>Nosotros</a>
+                <a href="blogs.html" style="color: #ff9800; font-size: 1.1rem; display: flex; align-items: center;"><span style="font-size:1.3rem; margin-right:0.3rem;">📰</span>Blogs</a>
+                <a href="contacto.html" style="color: #ff4d6d; font-size: 1.1rem; display: flex; align-items: center;"><span style="font-size:1.3rem; margin-right:0.3rem;">📞</span>Contacto</a>
             </nav>
-            <div class="user-actions">
-                <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
-                <button onclick="window.location.href='registro.html'">Registro</button>
-                <button id="btnCarrito" class="btn-cart">
-                    🛒 Carrito <span id="cartCount" class="cart-count">0</span>
-                </button>
+            <div class="user-actions" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.2rem; width: 220px;">
+                <button onclick="window.location.href='login.html'" style="background: #232b39; color: #fff; border: none; border-radius: 8px; padding: 0.6rem 0; font-size: 1rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer;"> <span>🔑</span> Iniciar Sesión</button>
+                <button onclick="window.location.href='registro.html'" style="background: #19e0ff; color: #181f2a; border: none; border-radius: 8px; padding: 0.6rem 0; font-size: 1rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer;"> <span>📝</span> Registro</button>
+                <button id="btnCarrito" class="btn-cart" style="background: #1ed760; color: #fff; border: none; border-radius: 8px; padding: 0.6rem 0; font-size: 1rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer;"> <span>🛒</span> Carrito <span id="cartCount" class="cart-count" style="background: #ff4d6d; color: #fff; border-radius: 50%; padding: 0 0.5em; margin-left: 0.5em;">0</span></button>
             </div>
         </div>
-        <p class="hint">Explora nuestro catálogo completo de videojuegos</p>
+        <div style="margin-top: 1.5rem; text-align: center;">
+            <span style="color: #19e0ff; font-size: 1.1rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span style="font-size:1.2rem;">🎮</span> Explora nuestro catálogo completo de videojuegos
+            </span>
+        </div>
     </header>
 
     <main>
         <!-- Filtros y Búsqueda -->
-        <section>
-            <h2>🔍 Buscar y Filtrar</h2>
+        <section style="background: #181f2a; border-radius: 14px; margin: 2rem 0; padding: 1.5rem 1rem; box-shadow: 0 2px 12px #0002;">
+            <h2 style="color: #19e0ff; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;">
+                <span style="font-size:1.3rem;">🔍</span> Buscar y Filtrar
+            </h2>
             <div class="filters-section">
-                <div class="row">
-                    <div>
-                        <label for="buscarTexto">Buscar por nombre:</label>
-                        <input type="text" id="buscarTexto" placeholder="Ej: Zelda, FIFA, Call of Duty...">
+                <div class="row" style="gap: 1.5rem;">
+                    <div style="flex:1;">
+                        <label for="buscarTexto" style="color:#b3c2d6; font-weight:500; display:flex; align-items:center; gap:0.4rem;"><span>🔎</span> Buscar por nombre:</label>
+                        <input type="text" id="buscarTexto" placeholder="Ej: Zelda, FIFA, Call of Duty..." style="width:100%; background:#232b39; color:#fff; border:none; border-radius:8px; padding:0.6rem; margin-top:0.3rem;">
                     </div>
-                    <div>
-                        <label for="filtroCategoria">Filtrar por categoría:</label>
-                        <select id="filtroCategoria">
+                    <div style="flex:1;">
+                        <label for="filtroCategoria" style="color:#b3c2d6; font-weight:500; display:flex; align-items:center; gap:0.4rem;"><span>📁</span> Filtrar por categoría:</label>
+                        <select id="filtroCategoria" style="width:100%; background:#232b39; color:#fff; border:none; border-radius:8px; padding:0.6rem; margin-top:0.3rem;">
                             <option value="">Todas las categorías</option>
                         </select>
                     </div>
                 </div>
-                <div class="row">
-                    <div>
-                        <label for="ordenarPor">Ordenar por:</label>
-                        <select id="ordenarPor">
+                <div class="row" style="gap: 1.5rem; margin-top: 1.2rem; align-items: flex-end;">
+                    <div style="flex:1;">
+                        <label for="ordenarPor" style="color:#b3c2d6; font-weight:500; display:flex; align-items:center; gap:0.4rem;"><span>↕️</span> Ordenar por:</label>
+                        <select id="ordenarPor" style="width:100%; background:#232b39; color:#fff; border:none; border-radius:8px; padding:0.6rem; margin-top:0.3rem;">
                             <option value="nombre">Nombre A-Z</option>
                             <option value="precio-menor">Precio: Menor a Mayor</option>
                             <option value="precio-mayor">Precio: Mayor a Menor</option>
                             <option value="stock">Stock Disponible</option>
                         </select>
                     </div>
-                    <div>
-                        <button id="btnAplicarFiltros" class="btn-primary">Aplicar Filtros</button>
-                        <button id="btnLimpiarFiltros">Limpiar Todo</button>
+                    <div style="display: flex; gap: 0.7rem;">
+                        <button id="btnAplicarFiltros" class="btn-primary" style="background:#19e0ff; color:#181f2a; font-weight:600; border-radius:8px; padding:0.6rem 1.2rem; display:flex; align-items:center; gap:0.4rem; border:none;"> <span>🔎</span> Aplicar Filtros</button>
+                        <button id="btnLimpiarFiltros" style="background:#232b39; color:#fff; font-weight:600; border-radius:8px; padding:0.6rem 1.2rem; display:flex; align-items:center; gap:0.4rem; border:none;"> <span>🧹</span> Limpiar Todo</button>
                     </div>
                 </div>
             </div>
